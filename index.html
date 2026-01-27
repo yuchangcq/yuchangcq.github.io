@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibing.com Domain for Sale | Let's Vibing Together</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            --accent-gradient: linear-gradient(to right, #00c9ff, #92fe9d);
+            --pulse-color: rgba(106, 17, 203, 0.8);
+            --wave-color-1: rgba(255, 255, 255, 0.1);
+            --wave-color-2: rgba(255, 255, 255, 0.2);
+            --contact-bg: rgba(255, 255, 255, 0.15);
+            --contact-hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            --particle-color: rgba(255, 255, 255, 0.6);
+            --footer-border: rgba(255, 255, 255, 0.1);
+            --footer-text: rgba(255, 255, 255, 0.7);
+            --vibe-fill-gradient: linear-gradient(to right, #00c9ff, #92fe9d, #ffcc00);
+        }
+        
+        [lang="zh-CN"] {
+            --primary-gradient: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            --accent-gradient: linear-gradient(to right, #ff4081, #7c4dff);
+            --pulse-color: rgba(233, 30, 99, 0.8);
+            --wave-color-1: rgba(255, 255, 255, 0.08);
+            --wave-color-2: rgba(255, 255, 255, 0.15);
+            --contact-bg: rgba(255, 255, 255, 0.12);
+            --vibe-fill-gradient: linear-gradient(to right, #ff4081, #7c4dff, #ffeb3b);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: var(--primary-gradient);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+            transition: background 0.5s ease;
+        }
+        
+        /* 动态背景波浪 */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 0L1200 0L1200 30C1000 100, 800 0, 600 30C400 0, 200 100, 0 30L0 0Z" fill="%23ffffff" opacity="0.1"/></svg>');
+            background-size: cover;
+            animation: wave 15s linear infinite;
+        }
+        
+        .wave2 {
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 0L1200 0L1200 30C1000 100, 800 0, 600 30C400 0, 200 100, 0 30L0 0Z" fill="%23ffffff" opacity="0.2"/></svg>');
+            animation-duration: 20s;
+            animation-direction: reverse;
+            bottom: -50px;
+        }
+        
+        [lang="zh-CN"] .wave {
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 0L1200 0L1200 30C1000 100, 800 0, 600 30C400 0, 200 100, 0 30L0 0Z" fill="%23ffffff" opacity="0.08"/></svg>');
+        }
+        
+        [lang="zh-CN"] .wave2 {
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 0L1200 0L1200 30C1000 100, 800 0, 600 30C400 0, 200 100, 0 30L0 0Z" fill="%23ffffff" opacity="0.15"/></svg>');
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+        
+        /* 粒子背景效果 */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--particle-color);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* 语言切换按钮 */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 5px;
+            display: flex;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            font-family: inherit;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            min-width: 60px;
+            font-size: 14px;
+        }
+        
+        .lang-btn.active {
+            background: white;
+            color: #6a11cb;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .logo {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ff8a00, #da1b60, #6a11cb, #00c9ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            letter-spacing: -2px;
+            animation: pulse 3s infinite;
+            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+        }
+        
+        [lang="zh-CN"] .logo {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            letter-spacing: -1px;
+            font-size: 4.5rem;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px var(--pulse-color); }
+            100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+        }
+        
+        .domain {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 3px;
+            font-family: monospace;
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            margin: 1.5rem 0;
+            max-width: 800px;
+            line-height: 1.6;
+            font-weight: 300;
+            text-shadow: var(--text-shadow);
+            padding: 0 10px;
+        }
+        
+        [lang="zh-CN"] .tagline {
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .contact-container {
+            background: var(--contact-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-container:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--contact-hover-shadow);
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .email {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            display: block;
+            margin: 1rem 0;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            font-family: monospace;
+        }
+        
+        .email:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 201, 255, 0.5);
+        }
+        
+        .email::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 3px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: right;
+        }
+        
+        .email:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .cta {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            line-height: 1.7;
+            padding: 0 10px;
+        }
+        
+        [lang="zh-CN"] .cta {
+            font-weight: 400;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--footer-border);
+            font-size: 0.9rem;
+            color: var(--footer-text);
+            width: 100%;
+            padding: 0 10px;
+        }
+        
+        .vibe-meter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .vibe-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            width: 100%;
+            overflow: hidden;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .vibe-fill {
+            height: 100%;
+            width: 75%;
+            background: var(--vibe-fill-gradient);
+            border-radius: 10px;
+            position: relative;
+            animation: pulseBar 2s infinite alternate;
+        }
+        
+        @keyframes pulseBar {
+            0% { width: 70%; }
+            100% { width: 80%; }
+        }
+        
+        .vibe-text {
+            position: absolute;
+            top: -25px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .lang-switcher {
+                top: 15px;
+                right: 15px;
+                padding: 3px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 13px;
+                min-width: 50px;
+            }
+            
+            .logo {
+                font-size: 3.5rem;
+            }
+            
+            [lang="zh-CN"] .logo {
+                font-size: 3.2rem;
+            }
+            
+            .domain {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .contact-container {
+                padding: 1.8rem;
+                margin: 1.5rem 0;
+            }
+            
+            .email {
+                font-size: 1.7rem;
+            }
+            
+            .wave, .wave2 {
+                height: 100px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+                width: 100px;
+            }
+            
+            .lang-btn {
+                padding: 5px 8px;
+                font-size: 12px;
+                min-width: 45px;
+            }
+            
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            [lang="zh-CN"] .logo {
+                font-size: 2.6rem;
+            }
+            
+            .domain {
+                font-size: 1.7rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .contact-title {
+                font-size: 1.5rem;
+            }
+            
+            .email {
+                font-size: 1.5rem;
+                padding: 8px 15px;
+            }
+            
+            .vibe-meter {
+                flex-direction: column;
+                max-width: 300px;
+            }
+            
+            .vibe-text {
+                top: -40px;
+                font-size: 0.8rem;
+                padding: 1px 6px;
+            }
+            
+            .cta {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* 通知区域 */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1000;
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        .notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 语言切换按钮 -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh-CN">中文</button>
+    </div>
+    
+    <div class="particles" id="particles"></div>
+    
+    <div class="wave"></div>
+    <div class="wave wave2"></div>
+    
+    <div class="container">
+        <h1 class="logo" data-en="VIBINGYOU" data-zh="共鸣你">VIBINGYOU</h1>
+        <div class="domain">www.vibing.com</div>
+        <p class="tagline" 
+           data-en="A vibrant and resonant domain name waiting to create chemistry with your brand. Let every visit become a delightful resonance experience." 
+           data-zh="一个充满活力与共鸣的域名，等待与您的品牌产生化学反应。让每一次访问都成为愉悦的共鸣体验。">
+            A vibrant and resonant domain name waiting to create chemistry with your brand. Let every visit become a delightful resonance experience.
+        </p>
+        
+        <div class="vibe-meter">
+            <div class="vibe-bar">
+                <div class="vibe-fill">
+                    <span class="vibe-text" data-en="For Sale" data-zh="出售中">For Sale</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-container">
+            <h2 class="contact-title" data-en="Contact for Purchase" data-zh="联系购买">Contact for Purchase</h2>
+            <a href="mailto:chengqunfc@163.com" class="email" id="email-link">chengqunfc@163.com</a>
+            <p class="cta" 
+               data-en="This premium domain is looking for its new owner. If you're interested in this domain, please contact me via the email above to discuss pricing and transfer details." 
+               data-zh="这个优质域名正在寻找新主人。如果您对该域名感兴趣，请通过上方邮箱联系我，我们可以讨论价格和转让细节。">
+                This premium domain is looking for its new owner. If you're interested in this domain, please contact me via the email above to discuss pricing and transfer details.
+            </p>
+        </div>
+        
+        <div class="footer" 
+             data-en="Vibing.com Domain for Sale | Crafted for brands seeking the perfect digital identity" 
+             data-zh="Vibing.com 域名出售 | 专为寻找完美数字身份的品牌打造">
+            Vibing.com Domain for Sale | Crafted for brands seeking the perfect digital identity
+        </div>
+    </div>
+    
+    <div class="notification" id="notification"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 语言切换功能
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const translatableElements = document.querySelectorAll('[data-en], [data-zh]');
+            const htmlEl = document.documentElement;
+            const notification = document.getElementById('notification');
+            
+            // 检查本地存储中的语言偏好
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLang);
+            
+            // 设置语言
+            function setLanguage(lang) {
+                // 更新HTML lang属性
+                htmlEl.setAttribute('lang', lang);
+                
+                // 更新按钮状态
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+                
+                // 更新所有可翻译元素
+                translatableElements.forEach(el => {
+                    if (lang === 'zh-CN' && el.hasAttribute('data-zh')) {
+                        el.textContent = el.getAttribute('data-zh');
+                    } else if (el.hasAttribute('data-en')) {
+                        el.textContent = el.getAttribute('data-en');
+                    }
+                });
+                
+                // 保存语言偏好
+                localStorage.setItem('preferredLanguage', lang);
+                
+                // 显示语言切换通知
+                showNotification(lang === 'zh-CN' ? '已切换到简体中文' : 'Switched to English');
+            }
+            
+            // 语言按钮点击事件
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            // 显示通知
+            function showNotification(message) {
+                notification.textContent = message;
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // 邮箱点击效果
+            document.getElementById('email-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification(this.getAttribute('lang') === 'zh-CN' ? 
+                    '邮箱地址已复制到剪贴板！' : 
+                    'Email address copied to clipboard!');
+                
+                // 复制邮箱到剪贴板
+                navigator.clipboard.writeText('chengqunfc@163.com').catch(err => {
+                    console.error('Failed to copy email: ', err);
+                    window.location.href = 'mailto:chengqunfc@163.com';
+                });
+                
+                // 创建点击动画
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '100px';
+                ripple.style.height = '100px';
+                ripple.style.borderRadius = '50%';
+                ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                
+                const rect = this.getBoundingClientRect();
+                ripple.style.left = ` $ {e.clientX - rect.left - 50}px`;
+                ripple.style.top = ` $ {e.clientY - rect.top - 50}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                // 2秒后打开邮件客户端
+                setTimeout(() => {
+                    window.location.href = 'mailto:chengqunfc@163.com';
+                }, 2000);
+            });
+            
+            // 创建粒子背景效果
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                createParticle();
+            }
+            
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // 随机大小
+                const size = Math.random() * 8 + 2;
+                particle.style.width = ` $ {size}px`;
+                particle.style.height = ` $ {size}px`;
+                
+                // 随机位置
+                particle.style.left = ` $ {Math.random() * 100}%`;
+                particle.style.top = ` $ {Math.random() * 100}%`;
+                
+                // 随机动画时长和延迟
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animationDuration = ` $ {duration}s`;
+                particle.style.animationDelay = ` $ {delay}s`;
+                
+                // 随机水平移动
+                const horizontalMove = (Math.random() - 0.5) * 100;
+                particle.style.animationName = `float, moveX $ {i}`;
+                
+                // 创建关键帧动画
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    @keyframes moveX $ {i} {
+                        0% { transform: translateX(0) translateY(0); }
+                        100% { transform: translateX( $ {horizontalMove}px) translateY(-100vh); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // 添加关键帧动画样式
+            const styleSheet = document.createElement('style');
+            styleSheet.innerHTML = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(styleSheet);
+            
+            // 优化移动端体验
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.style.touchAction = 'manipulation';
+            }
+        });
+    </script>
+</body>
+</html>
